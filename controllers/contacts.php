@@ -2,4 +2,4 @@
 
 $heading = "Contact Us";
 
-require('views/contacts.view.php');  
+require('views/contacts.view.php');

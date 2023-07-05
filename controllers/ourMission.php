@@ -2,4 +2,4 @@
 
 $heading = "Our Mission";
 
-require "views/ourMission.view.php"; 
+require "views/ourMission.view.php";
