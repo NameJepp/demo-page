@@ -1,6 +1,6 @@
-<?php require('views/partials/head.php') ?>
-<?php require('views/partials/nav.php') ?>
-<?php require('views/partials/banner.php')?>
+<?php view('partials/head.php') ?>
+<?php view('partials/nav.php') ?>
+<?php view('partials/banner.php')?>
 
 
     <main>
@@ -22,4 +22,4 @@
         </div>
     </main>
 
-<?php require('views/partials/footer.php');
+<?php view('partials/footer.php');
