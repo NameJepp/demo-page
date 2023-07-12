@@ -30,24 +30,20 @@ $user = $db->query('SELECT * FROM users WHERE email = :email', [
 ])->find();
 
 if ($user) {
-    // user with this eamil already excists and has an account
-    //if yes, redirect to login page
-    header('location: /');
+    header('location: /login');
     exit();
 } else {
     // if not, save one to the database, then log the userr in, and redirect
     $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
         'email' => $email,
-        'password' => $password
+        'password' => password_hash($password, PASSWORD_BCRYPT),
     ]);
 }
 
 
-//mark that the user has logged in
-
-$_SESSION['user'] = [
-    'email' => $email,
-];
+login([
+    'email' => $email
+]);
 
 header('location: /');
 exit();
